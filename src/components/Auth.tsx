@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import toast from "react-hot-toast";
 import { Navigate } from "react-router-dom";
 import { useAuth } from "../hooks/AuthProvider";
@@ -30,12 +30,6 @@ function Auth() {
       toast.dismiss(loading)
     }
   }
-
-  useEffect(() => {
-    if (isAuthenticated) {
-      <Navigate to={'/'} />
-    }
-  }, [isAuthenticated])
 
   if (isAuthenticated) {
     return <Navigate to='/' />
